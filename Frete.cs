@@ -16,8 +16,11 @@ namespace FreteApp02
         public Frete(ICorreioService _correioService)
         {
             correioService = _correioService;
-			
-			//adicionalFrete => Taxa
+	}
+	    
+	public double CalcularFrete()
+        {
+            //adicionalFrete => Taxa
 			
 			if (correioService.Peso <= 5) {
 				return correioService.CalculaFrete() + 5;
@@ -31,6 +34,8 @@ namespace FreteApp02
 				}
 			}
         }
+			
+    	}
         
     }
 }
